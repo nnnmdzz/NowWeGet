@@ -26,11 +26,11 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install -g javascript-obfuscator
+          npm install -g javascript-obfuscator          
 
       - name: Clone BPB workjs
         run: |
-          wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/build/unobfuscated-worker.js
+          wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/build/unobfuscated-worker.js          
       
       - name: Obfuscate BPB worker js
         run: |
@@ -46,7 +46,7 @@ jobs:
           --string-array-encoding 'rc4' \
           --string-array-threshold 1 \
           --transform-object-keys true \
-          --unicode-escape-sequence true
+          --unicode-escape-sequence true          
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
